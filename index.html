@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALSI</title>
+	<style type="text/css">
+		.container{
+			height: 100vh;
+			width: 100%;
+			background-image: url("https://img.freepik.com/free-photo/blue-blank-notepad-with-copy-space_23-2148475334.jpg");
+			background-repeat: no repeat;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.parent-div{
+			height: 550px;
+			width: 375px;
+			background-color: grey;
+			box-shadow: 0px 0px 50px;
+			padding: 30px;
+		}
+		.output{
+			height: 75px;
+			width: 90%;
+			font-size: 40px;
+			text-align: right;
+			padding: 0px 20px;
+		}
+		input{
+			height: 80px;
+			width: 80px;
+			margin: 5px;
+			border:none;
+			color:black;
+			font-size: 20px;
+			border-radius: 35px;
+			font-family: Arial Black;
+		}
+		input:hover{
+			cursor: pointer;
+		}
+		input[name="operator"],.blu{
+			background-color: blue;
+		}
+		.eql{
+			width: 170px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="parent-div" align="center">
+			<form>
+				<div class="data">
+					<input type="text" name="op" class="output" disabled>
+				</div>
+
+				<div>
+					<input type="button" name="ac" value="AC" class="blu" onclick="op.value=' '" >
+					<input type="button" name="c" value="C" class="blu" onclick="op.value=op.value.slice(0,-1)">
+					<input type="button" name="operator" value="/" onclick="op.value+='/' " >
+					<input type="button" name="operator" value="%" onclick="op.value+='%'" >
+				</div>
+
+				<div>
+					<input type="button" name="num" value="9" onclick="op.value+='9'" >
+					<input type="button" name="num" value="8" onclick="op.value+='8'">
+					<input type="button" name="num" value="7" onclick="op.value+='7' " >
+					<input type="button" name="operator" value="+" onclick="op.value+='+'" >
+				</div>				
+
+				<div>
+					<input type="button" name="num" value="6" onclick="op.value+='6'" >
+					<input type="button" name="num" value="5" onclick="op.value+='5'">
+					<input type="button" name="num" value="4" onclick="op.value+='4' " >
+					<input type="button" name="operator" value="-" onclick="op.value+='-'" >
+				</div>			
+
+				<div>
+					<input type="button" name="num" value="3" onclick="op.value+='3'" >
+					<input type="button" name="num" value="2" onclick="op.value+='2'">
+					<input type="button" name="num" value="1" onclick="op.value+='1' " >
+					<input type="button" name="operator" value="*" onclick="op.value+='*'" >
+				</div>			
+
+				<div>
+					<input type="button" name="num" value="0" onclick="op.value+='0'" >
+					<input type="button" name="num" value="." onclick="op.value+='.'">
+					<input type="button" name="num" value="=" onclick="op.value=eval(op.value)" class="eql">
+				</div>						
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
